@@ -4,6 +4,8 @@
 ##           Starts an automated Sysprep batch script
 ## Date: November 30th, 2017
 
+copy -Path 'automatedsysprep.bat' -Destination 'C:\Windows\System32\Sysprep'
+
 ##Deletes USERNAME account
 ##Enter the name of the user in place of USERNAME
 Get-WmiObject -Class Win32_UserProfile | where {$_.LocalPath.split()[-1] -eq 'Administrator.USERNAME'} | foreach {$_.Delete()}
